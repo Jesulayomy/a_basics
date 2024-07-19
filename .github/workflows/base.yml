@@ -7,10 +7,16 @@ on:
 
 jobs:
   check_veda_status:
-    name: Check Veda API status
+    name: Check API status
     runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v4
-    - name: Run Curl command
-      run: curl https://veda.jesulayomi.tech/app/status
+    - name: Check Veda Status
+      run: curl https://veda.jesulayomi.tech/api/status
+
+    - name: Check GatherGo Status
+      run: curl https://gathergo.jesulayomi.tech/api/status
+
+    - name: Check SCHub Status
+      run: curl https://schub-api.jesulayomi.tech/api/status
