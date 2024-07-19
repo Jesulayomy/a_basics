@@ -1,0 +1,16 @@
+name: Github Actions tests
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  check_veda_status:
+    name: Check Veda API status
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run Curl command
+      run: curl https://veda.jesulayomi.tech/app/status
